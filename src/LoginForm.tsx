@@ -27,7 +27,6 @@ export default function LoginForm(props: FormProps) {
                     variant="standard"
                 />
                 <TextField
-                    autoFocus
                     margin="dense"
                     id="password"
                     label="Password"

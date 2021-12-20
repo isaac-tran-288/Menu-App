@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Menu from './Menu';
-
+import LoginForm from './LoginForm';
 
 const drawerWidth = 240;
 interface Props {
@@ -23,7 +23,16 @@ function App(props: Props) {
     setMobileOpen(!mobileOpen);
   };
 
-  
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -57,14 +66,15 @@ function App(props: Props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        <Menu container={container} open={mobileOpen} onClose={handleDrawerToggle} />
-        
+        <Menu container={container} open={mobileOpen} onClose={handleDrawerToggle} openFormFunction={handleClickOpen} />
+
       </Box>
       <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
+        <LoginForm open={open} handleClose={handleClose} />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

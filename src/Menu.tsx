@@ -11,6 +11,7 @@ interface MenuProps {
     container: (() => HTMLElement) | undefined,
     open: boolean,
     onClose: () => void,
+    openFormFunction: () => void
 }
 export default function Menu(props: MenuProps) {
     const drawer = (
@@ -18,11 +19,21 @@ export default function Menu(props: MenuProps) {
             <Toolbar />
             <Divider />
             <List>
-                {['Login', 'Product', 'About', 'Contact Us'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                {['Login', 'Product', 'About', 'Contact Us'].map((text, index) => {
+                    if (text == "Login") {
+                        return (
+                            <ListItem button key={text} onClick={props.openFormFunction} >
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        );
+                    }
+                    else return (
+                        <ListItem button key={text}>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    );
+                })
+                }
             </List>
         </div>
     );
