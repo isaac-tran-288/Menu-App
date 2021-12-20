@@ -5,8 +5,7 @@ import {
     DialogContent,
     DialogTitle,
     TextField,
-    Button,
-    TableBody,
+    Button
 } from '@mui/material';
 
 interface FormProps {
@@ -27,16 +26,16 @@ export default function LoginForm(props: FormProps) {
         }));
     }
     const handleSubmit = () => {
-        fetch('http://localhost:3000', {
+        fetch('http://localhost:3000/login', {
             method: 'POST',
-            headers: { "Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
         }).then(() => {
             if (data.username === "isaac" && data.password === "123456") {
-                console.log("Logged in");
+                alert("Logged In Successfully!");
             }
             else {
-                alert("Invalid login");
+                alert("Invalid username or password. Please try again!");
             }
         });
         setData({
