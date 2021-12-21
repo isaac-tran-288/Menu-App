@@ -10,7 +10,6 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.14",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
@@ -23,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,6 +44,13 @@
     ]
   },
   "devDependencies": {
-    "jest": "^27.4.5"
+    "@babel/preset-typescript": "^7.16.5",
+    "@types/enzyme": "^3.10.10",
+    "@types/jest": "^27.0.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2"
   }
 }
