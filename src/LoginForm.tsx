@@ -59,6 +59,7 @@ export default function LoginForm(props: FormProps) {
                     variant="standard"
                     value={data.username}
                     onChange={inputHandler}
+                    inputProps={{ "data-testid": "username" }}
                 />
                 <TextField
                     margin="dense"
@@ -69,11 +70,12 @@ export default function LoginForm(props: FormProps) {
                     variant="standard"
                     value={data.password}
                     onChange={inputHandler}
+                    inputProps={{ "data-testid": "password" }}
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={props.handleClose}>Cancel</Button>
-                <Button onClick={handleSubmit}>Submit</Button>
+                <Button onClick={props.handleClose} >Cancel</Button>
+                <Button onClick={handleSubmit} data-testid="account-delete-submit" >Submit</Button>
             </DialogActions>
         </Dialog>
     );
