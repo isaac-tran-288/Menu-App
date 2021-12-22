@@ -7,6 +7,8 @@ import {
     TextField,
     Button
 } from '@mui/material';
+import login from "./login";
+
 
 interface FormProps {
     open: boolean,
@@ -26,18 +28,7 @@ export default function LoginForm(props: FormProps) {
         }));
     }
     const handleSubmit = () => {
-        fetch('http://localhost:3000/login', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        }).then(() => {
-            if (data.username === "isaac" && data.password === "123456") {
-                alert("Logged In Successfully!");
-            }
-            else {
-                alert("Invalid username or password. Please try again!");
-            }
-        });
+        login(data.username, data.password);
         setData({
             username: "",
             password: ""
@@ -53,6 +44,7 @@ export default function LoginForm(props: FormProps) {
                     autoFocus
                     margin="dense"
                     id="username"
+                    name="username"
                     label="Username"
                     type="email"
                     fullWidth
@@ -64,6 +56,7 @@ export default function LoginForm(props: FormProps) {
                 <TextField
                     margin="dense"
                     id="password"
+                    name='password'
                     label="Password"
                     type="password"
                     fullWidth
@@ -74,8 +67,8 @@ export default function LoginForm(props: FormProps) {
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={props.handleClose} >Cancel</Button>
-                <Button onClick={handleSubmit} data-testid="account-delete-submit" >Submit</Button>
+                <Button id="cancel" onClick={props.handleClose} >Cancel</Button>
+                <Button id="submit" onClick={handleSubmit} data-testid="account-delete-submit" >Submit</Button>
             </DialogActions>
         </Dialog>
     );
