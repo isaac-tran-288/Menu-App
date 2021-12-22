@@ -35,9 +35,9 @@ export default function Menu(props: MenuProps) {
                     </ListItem>)}
                 {currentList.map((item, index) => {
                     const { text, children } = item;
-                    if (text == "Login") {
+                    if (text === "Login") {
                         return (
-                            <ListItem button key={text} onClick={props.openFormFunction} >
+                            <ListItem id="login" button key={text} onClick={props.openFormFunction} >
                                 <ListItemText primary={text} />
                             </ListItem>
                         );
