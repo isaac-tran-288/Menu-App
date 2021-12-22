@@ -23,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clear_jest": "jest --clearCache"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +52,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
     "jest": "^27.4.5",
-    "ts-jest": "^27.1.2"
+    "ts-jest": "^27.1.2",
+    "whatwg-fetch": "^3.6.2"
   }
 }
