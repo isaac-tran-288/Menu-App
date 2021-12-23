@@ -1,6 +1,7 @@
 import { shallow } from 'enzyme';
 import LoginForm from '../LoginForm';
 import TextField from '@mui/material/TextField';
+import toJSON from 'enzyme-to-json';
 
 beforeAll(() => {
     require("whatwg-fetch");
@@ -28,6 +29,8 @@ describe('Test Login Form', () => {
     test('should render 1 submit button', () => {
         expect(wrapper.find("#submit")).toHaveLength(1);
     });
-
+    test("matches snapshot", () => {
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
 
 });

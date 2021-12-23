@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Login Form matches snapshot 1`] = `
+<ForwardRef(Dialog)
+  onClose={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  open={true}
+>
+  <ForwardRef(DialogTitle)>
+    Login
+  </ForwardRef(DialogTitle)>
+  <ForwardRef(DialogContent)>
+    <ForwardRef(TextField)
+      autoFocus={true}
+      fullWidth={true}
+      id="username"
+      label="Username"
+      margin="dense"
+      name="username"
+      onChange={[Function]}
+      type="email"
+      value=""
+      variant="standard"
+    />
+    <ForwardRef(TextField)
+      fullWidth={true}
+      id="password"
+      label="Password"
+      margin="dense"
+      name="password"
+      onChange={[Function]}
+      type="password"
+      value=""
+      variant="standard"
+    />
+  </ForwardRef(DialogContent)>
+  <ForwardRef(DialogActions)>
+    <ForwardRef(Button)
+      id="cancel"
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      Cancel
+    </ForwardRef(Button)>
+    <ForwardRef(Button)
+      id="submit"
+      onClick={[Function]}
+    >
+      Submit
+    </ForwardRef(Button)>
+  </ForwardRef(DialogActions)>
+</ForwardRef(Dialog)>
+`;
