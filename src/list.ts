@@ -36,6 +36,9 @@ export const DEFAULT_LIST = [
         ]
     },
     {
+        "text": "Sales"
+    },
+    {
         "text": "About"
     },
     {
@@ -49,6 +52,17 @@ export const DEFAULT_LIST = [
             },
             {
                 "text": "Office Location"
+            }
+        ]
+    },
+    {
+        "text": "Policy",
+        "children": [
+            {
+                "text": "Shipping Policy"
+            },
+            {
+                "text": "Return Policy"
             }
         ]
     }

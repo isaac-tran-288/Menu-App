@@ -1,7 +1,9 @@
 # Menu-App
 
 The details for login form:
+
 username: isaac
+
 password: 123456
 
 ## Getting Started with Create React App
