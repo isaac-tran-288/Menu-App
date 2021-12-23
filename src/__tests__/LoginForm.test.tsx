@@ -1,7 +1,6 @@
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import LoginForm from '../LoginForm';
 import TextField from '@mui/material/TextField';
-import login from '../login';
 
 beforeAll(() => {
     require("whatwg-fetch");
@@ -9,12 +8,7 @@ beforeAll(() => {
 
 describe('Test Login Form', () => {
     const handleCloseMock = jest.fn();
-    const loginMock = jest.fn();
 
-    jest.doMock("../login", () => ({
-        __esModule: true,
-        default: loginMock
-    }));
 
     const wrapper = shallow(<LoginForm open={true} handleClose={handleCloseMock} />);
 
@@ -31,11 +25,9 @@ describe('Test Login Form', () => {
         expect(handleCloseMock).toHaveBeenCalled();
     });
 
-    test('should call handle close function when clicking submit', () => {
-        // wrapper.find("#submit").simulate('click');
-        // expect(loginMock).toHaveBeenCalledWith("", "");
-        // expect(handleCloseMock).toHaveBeenCalled();
-
+    test('should render 1 submit button', () => {
+        expect(wrapper.find("#submit")).toHaveLength(1);
     });
+
 
 });
