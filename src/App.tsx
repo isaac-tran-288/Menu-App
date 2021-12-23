@@ -17,12 +17,15 @@ interface Props {
 
 function App(props: Props) {
 	const { window } = props;
+
+	// state control of menu toggle in small screen size
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
 
+	// state control of opening login form
 	const [open, setOpen] = React.useState(false);
 
 	const handleClickOpen = () => {

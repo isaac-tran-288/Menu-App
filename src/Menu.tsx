@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -44,15 +44,15 @@ export default function Menu(props: MenuProps) {
                     }
                     else {
                         return (
-                                <ListItem button key={text} onClick={() => {
-                                    if (children) {
-                                        setRootList(currentList);
-                                        setCurrentList(children);
-                                    }
-                                }} >
-                                    <ListItemText primary={text} />
-                                    {children && <ChevronRightIcon />}
-                                </ListItem>
+                            <ListItem button key={text} onClick={() => {
+                                if (children) {
+                                    setRootList(currentList);
+                                    setCurrentList(children);
+                                }
+                            }} >
+                                <ListItemText primary={text} />
+                                {children && <ChevronRightIcon />}
+                            </ListItem>
 
                         );
                     }

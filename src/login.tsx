@@ -1,7 +1,6 @@
-import React from 'react';
-
-
 export default function login(usernamePassed: string, passwordPassed: string) {
+    // send POST request to a fake endpoint
+    // should throw 404 error in the browser console
     fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
